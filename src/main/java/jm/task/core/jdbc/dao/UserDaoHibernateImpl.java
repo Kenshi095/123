@@ -10,12 +10,7 @@ import org.hibernate.query.NativeQuery;
 import java.util.List;
 
 public class UserDaoHibernateImpl implements UserDao {
-    private final SessionFactory sessionFactory;
-    private final Util util = new Util();
-
-    public UserDaoHibernateImpl() {
-        this.sessionFactory = util.createSessionFactory();
-    }
+    private final SessionFactory sessionFactory = new Util().createSessionFactory();
 
     @Override
     public void createUsersTable() {
